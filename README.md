@@ -1,54 +1,142 @@
-# React + TypeScript + Vite
+# Twitter Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Twitter clone built with React, Node.js, and MongoDB. This application provides a simplified version of Twitter's core functionality with a clean, responsive UI that supports both light and dark themes.
 
-Currently, two official plugins are available:
+![Twitter Clone Screenshot](https://via.placeholder.com/800x400?text=Twitter+Clone)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **User Authentication**: Secure signup, login, and logout functionality
+- **Tweet Management**: Create, read, update, and delete tweets
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Theme Support**: Light and dark mode with smooth transitions
+- **Real-time Updates**: See new tweets as they're posted
+- **User Profiles**: View and edit user information
+- **Modern UI**: Built with Tailwind CSS and Shadcn UI components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Frontend
+- **React**: UI library for building the user interface
+- **TypeScript**: Type-safe JavaScript for better developer experience
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Shadcn UI**: High-quality UI components
+- **React Router**: Client-side routing
+- **Context API**: State management
+
+### Backend
+- **Node.js**: JavaScript runtime for the server
+- **Express**: Web framework for Node.js
+- **MongoDB**: NoSQL database for storing data
+- **Mongoose**: MongoDB object modeling for Node.js
+- **JWT**: JSON Web Tokens for authentication
+- **Bcrypt**: Password hashing
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/twitter-clone.git
+   cd twitter-clone
+   ```
+
+2. Install backend dependencies
+   ```bash
+   npm install
+   ```
+
+3. Install frontend dependencies
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+4. Set up environment variables
+   - Create a `.env` file in the root directory with the following variables:
+     ```
+     PORT=5000
+     MONGODB_URI=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret
+     ```
+   - Create a `.env` file in the frontend directory with:
+     ```
+     VITE_API_URL=http://localhost:5000/api
+     ```
+
+5. Start the development servers
+   - Backend:
+     ```bash
+     npm run dev
+     ```
+   - Frontend:
+     ```bash
+     cd frontend
+     npm run dev
+     ```
+
+6. Open your browser and navigate to `http://localhost:5173`
+
+## Project Structure
+
+```
+twitter-clone/
+├── frontend/                # React frontend
+│   ├── public/              # Static assets
+│   │   ├── components/      # UI components
+│   │   ├── context/         # React context
+│   │   ├── hooks/           # Custom hooks
+│   │   ├── pages/           # Page components
+│   │   ├── services/        # API services
+│   │   ├── types/           # TypeScript types
+│   │   └── utils/           # Utility functions
+│   ├── .env                 # Frontend environment variables
+│   └── package.json         # Frontend dependencies
+├── src/                     # Backend source code
+│   ├── controllers/         # Request handlers
+│   ├── middleware/          # Express middleware
+│   ├── models/              # Mongoose models
+│   ├── routes/              # API routes
+│   └── utils/               # Utility functions
+├── .env                     # Backend environment variables
+├── .ebignore                # Elastic Beanstalk ignore file
+├── .elasticbeanstalk/       # AWS Elastic Beanstalk config
+├── package.json             # Backend dependencies
+└── README.md                # Project documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project is configured for deployment on AWS:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Backend**: Deployed on AWS Elastic Beanstalk
+- **Frontend**: Deployed on AWS S3 with CloudFront
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [React](https://reactjs.org/)
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/)
