@@ -8,10 +8,8 @@ A modern Twitter clone built with React, Node.js, and MongoDB. This application 
 
 - **User Authentication**: Secure signup, login, and logout functionality
 - **Tweet Management**: Create, read, update, and delete tweets
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Theme Support**: Light and dark mode with smooth transitions
 - **Real-time Updates**: See new tweets as they're posted
-- **User Profiles**: View and edit user information
 - **Modern UI**: Built with Tailwind CSS and Shadcn UI components
 
 ## Tech Stack
