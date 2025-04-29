@@ -1,4 +1,4 @@
-import { API_BASE_URL, ENDPOINTS } from '@/lib/api'
+import { API_BASE_URL, ENDPOINTS } from '@/utils/api'
 import { Tweet, CreateTweetRequest, UpdateTweetRequest } from '@/types/tweet'
 
 // Helper function to transform backend tweet format to frontend format

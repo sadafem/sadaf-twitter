@@ -1,4 +1,4 @@
-import { API_BASE_URL, ENDPOINTS } from '@/lib/api'
+import { API_BASE_URL, ENDPOINTS } from '@/utils/api'
 
 interface LoginCredentials {
   email: string
