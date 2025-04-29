@@ -2,12 +2,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useAuth } from '@/context/AuthContext'
 import { authService } from '@/services/auth'
+import { useAppDispatch } from '@/store/hooks'
+import { login } from '@/store/authSlice'
 
 export function LoginForm() {
   const navigate = useNavigate()
-  const { login } = useAuth()
+  const dispatch = useAppDispatch()
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
@@ -23,7 +24,7 @@ export function LoginForm() {
     try {
       const response = await authService.login({ email, password })
       localStorage.setItem('token', response.token)
-      login(response.user)
+      dispatch(login(response.user))
       navigate('/')
     } catch (err) {
       setError('Invalid email or password')

@@ -3,10 +3,10 @@ import { Tweet } from '@/types/tweet'
 import { tweetService } from '@/services/tweet'
 import { TweetCard } from './TweetCard'
 import { CreateTweet } from './CreateTweet'
-import { useAuth } from '@/context/AuthContext'
+import { useAppSelector } from '@/store/hooks'
 
 export function TweetList() {
-  const { user } = useAuth()
+  const { user } = useAppSelector(state => state.auth)
   const [tweets, setTweets] = useState<Tweet[]>([])
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
@@ -75,12 +75,11 @@ export function TweetList() {
   }
 
   return (
-    <div className="divide-y divide-gray-700">
-      {user && (
-        <CreateTweet onTweetCreated={handleTweetCreated} />
-      )}
+    <div className="space-y-4">
+      {user && <CreateTweet onTweetCreated={handleTweetCreated} />}
+      
       {tweets.length === 0 ? (
-        <div className="p-4 text-center text-gray-400">
+        <div className="p-4 text-center text-gray-500 dark:text-gray-400">
           No tweets yet. Be the first to tweet!
         </div>
       ) : (
@@ -88,8 +87,8 @@ export function TweetList() {
           <TweetCard
             key={tweet.id}
             tweet={tweet}
-            onUpdate={handleTweetUpdated}
-            onDelete={handleTweetDeleted}
+            onTweetUpdated={handleTweetUpdated}
+            onTweetDeleted={handleTweetDeleted}
           />
         ))
       )}

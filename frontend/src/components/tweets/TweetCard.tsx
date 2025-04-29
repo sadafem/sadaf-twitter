@@ -3,16 +3,16 @@ import { Tweet } from '@/types/tweet'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { tweetService } from '@/services/tweet'
-import { useAuth } from '@/context/AuthContext'
+import { useAppSelector } from '@/store/hooks'
 
 interface TweetCardProps {
   tweet: Tweet
-  onUpdate: (updatedTweet: Tweet) => void
-  onDelete: (id: string) => void
+  onTweetUpdated: (updatedTweet: Tweet) => void
+  onTweetDeleted: (id: string) => void
 }
 
-export function TweetCard({ tweet, onUpdate, onDelete }: TweetCardProps) {
-  const { user } = useAuth()
+export function TweetCard({ tweet, onTweetUpdated, onTweetDeleted }: TweetCardProps) {
+  const { user } = useAppSelector(state => state.auth)
   const [isEditing, setIsEditing] = useState(false)
   const [content, setContent] = useState(tweet.content)
   const [error, setError] = useState('')
@@ -61,7 +61,7 @@ export function TweetCard({ tweet, onUpdate, onDelete }: TweetCardProps) {
 
     try {
       const updatedTweet = await tweetService.updateTweet(tweet.id, { content })
-      onUpdate(updatedTweet)
+      onTweetUpdated(updatedTweet)
       setIsEditing(false)
     } catch (err) {
       if (err instanceof Error) {
@@ -84,7 +84,7 @@ export function TweetCard({ tweet, onUpdate, onDelete }: TweetCardProps) {
 
     try {
       await tweetService.deleteTweet(tweet.id)
-      onDelete(tweet.id)
+      onTweetDeleted(tweet.id)
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message)

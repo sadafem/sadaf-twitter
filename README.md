@@ -112,24 +112,4 @@ twitter-clone/
 └── README.md                # Project documentation
 ```
 
-## Deployment
 
-This project is configured for deployment on AWS:
-
-- **Backend**: Deployed on AWS Elastic Beanstalk
-- **Frontend**: Deployed on AWS S3 with CloudFront
-
-For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
-
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Shadcn UI](https://ui.shadcn.com/)
-- [React](https://reactjs.org/)
-- [Node.js](https://nodejs.org/)
-- [MongoDB](https://www.mongodb.com/)
