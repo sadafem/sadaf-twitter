@@ -85,8 +85,6 @@ function AppLayout({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
-  const { isAuthenticated } = useAppSelector(state => state.auth)
-
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
