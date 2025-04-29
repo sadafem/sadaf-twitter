@@ -12,6 +12,7 @@ A modern Twitter clone built with React, Node.js, and MongoDB. This application 
 - **Real-time Updates**: See new tweets as they're posted
 - **Modern UI**: Built with Tailwind CSS and Shadcn UI components
 
+
 ## Tech Stack
 
 ### Frontend
@@ -19,14 +20,13 @@ A modern Twitter clone built with React, Node.js, and MongoDB. This application 
 - **TypeScript**: Type-safe JavaScript for better developer experience
 - **Tailwind CSS**: Utility-first CSS framework for styling
 - **Shadcn UI**: High-quality UI components
-- **React Router**: Client-side routing
-- **Context API**: State management
+- **Redux Toolkit**: State management
+- **TanStack Query**: Data fetching, caching, and synchronization
 
 ### Backend
 - **Node.js**: JavaScript runtime for the server
 - **Express**: Web framework for Node.js
 - **MongoDB**: NoSQL database for storing data
-- **Mongoose**: MongoDB object modeling for Node.js
 - **JWT**: JSON Web Tokens for authentication
 - **Bcrypt**: Password hashing
 
@@ -88,11 +88,11 @@ A modern Twitter clone built with React, Node.js, and MongoDB. This application 
 twitter-clone/
 ├── frontend/                # React frontend
 │   ├── public/              # Static assets
+│   ├── src/                 # Source code
 │   │   ├── components/      # UI components
-│   │   ├── context/         # React context
-│   │   ├── hooks/           # Custom hooks
 │   │   ├── pages/           # Page components
 │   │   ├── services/        # API services
+│   │   ├── store/           # Redux store
 │   │   ├── types/           # TypeScript types
 │   │   └── utils/           # Utility functions
 │   ├── .env                 # Frontend environment variables
@@ -109,5 +109,7 @@ twitter-clone/
 ├── package.json             # Backend dependencies
 └── README.md                # Project documentation
 ```
+s
+
 
 
