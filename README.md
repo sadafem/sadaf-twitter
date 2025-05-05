@@ -109,7 +109,10 @@ twitter-clone/
 ├── package.json             # Backend dependencies
 └── README.md                # Project documentation
 ```
-s
+## Deployement
+
+- **Backend** has deployed on an AWS EC2 instance.
+- **Frontend** has deployed on AWS S3. http://mytwitterfront.s3-website.us-east-2.amazonaws.com
 
 
 
