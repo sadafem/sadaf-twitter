@@ -31,4 +31,4 @@ router.post('/signup', validateSignup, validate, signup);
 router.post('/login', validateLogin, validate, login);
 router.post('/logout', auth, logout);
 
-export default router; 
+export default router;

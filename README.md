@@ -2,7 +2,7 @@
 
 A modern Twitter clone built with React, Node.js, and MongoDB. This application provides a simplified version of Twitter's core functionality with a clean, responsive UI that supports both light and dark themes.
 
-![Twitter Clone Screenshot](https://via.placeholder.com/800x400?text=Twitter+Clone)
+
 
 ## Features
 
