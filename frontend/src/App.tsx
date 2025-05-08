@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
+import { Router, Routes, Route, Navigate, useNavigate } from 'react-router'
+import { createBrowserHistory } from 'history'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/utils/api'
 import { Button } from '@/components/ui/button'
@@ -85,9 +86,11 @@ function AppLayout({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
+  const history = createBrowserHistory()
+  
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <Router location={history.location} navigator={history}>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
